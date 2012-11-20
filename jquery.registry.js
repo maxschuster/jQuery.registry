@@ -34,14 +34,14 @@
                 reg = registry[app];
             }
             if (reg[key] !== value) {
-                console.log(app + '/' + key + '.registry');
                 $reg.trigger(app + '/' + key + '.registry', {
                     key: key,
                     app: app,
                     value: value
                 });
+                reg[key] = value;
             }
-            reg[key] = value;
+            
         }
         var argCount = arguments.length,
                 app;

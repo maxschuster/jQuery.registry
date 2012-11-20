@@ -16,8 +16,9 @@
                     'c': 'd'
                 });
                 $.registry('test', 'e', 'end');
-                console.log($.registry('test', 'e'));
-                console.log($.registry('test', ['gibbet net', 'test', 'c']));
+                $.registry('test', 'test', '123');
+                $.registry('test', 'test', '456');
+                console.log($.registry('test', 'e'), $.registry('test', ['gibbet net', 'test', 'c']));
             });
         </script>
     </head>
