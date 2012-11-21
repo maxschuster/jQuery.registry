@@ -4,11 +4,12 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-        <script src="jquery.registry.js" type="text/javascript"></script>
+        <script src="jquery.registry.min.js" type="text/javascript"></script>
+        <script src="jquery.ba-tinypubsub.min.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-                $.registry('event').on('test/test.registry', function(e, data){
-                    console.log('handler', data);
+                $.subscribe('/registry/test/test', function(e, data) {
+                    console.log('Value of registry entry "' + data.key + '" of the app "' + data.app + '" changed to "' + data.value + '"');
                 });
                 $.registry('test', {
                     'test': 'yep!',
